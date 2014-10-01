@@ -77,7 +77,11 @@ CheckGPIOForceUpdate(void)
     //
     // Enable the required GPIO module.
     //
+	#ifdef PART_TM4C1294NCPDT
+    HWREG(SYSCTL_RCGCGPIO) |= FORCED_UPDATE_PERIPH;
+	#else
     HWREG(SYSCTL_RCGC2) |= FORCED_UPDATE_PERIPH;
+	#endif
 
     //
     // Wait a while before accessing the peripheral.

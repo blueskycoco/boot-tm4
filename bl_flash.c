@@ -136,10 +136,10 @@ BLInternalFlashStartAddrCheck(uint32_t ui32Addr, uint32_t ui32ImgSize)
     //
     // Determine the size of the flash available on the part in use.
     //
-	#ifdef PART_TM4C129XNCZAD
+	#ifdef PART_TM4C1294NCPDT
 		ui32FlashSize = ((HWREG(FLASH_PP) & FLASH_PP_SIZE_M) + 1) << 11;
 	#endif
-	#ifndef PART_TM4C129XNCZAD
+	#ifndef PART_TM4C1294NCPDT
 		ui32FlashSize = ((HWREG(SYSCTL_DC0) & SYSCTL_DC0_FLASHSZ_M) + 1) << 11;
 	#endif
 

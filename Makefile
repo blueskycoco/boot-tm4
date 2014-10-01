@@ -97,7 +97,7 @@ ${COMPILER}/project.axf: ${ROOT}/driverlib/${COMPILER}/libdriver.a
 ${COMPILER}/project.axf: bl_link.ld
 SCATTERgcc_project=bl_link.ld
 ENTRY_project=ResetISR
-CFLAGSgcc=-DTARGET_IS_TM4C123_RA3
+CFLAGSgcc=-DPART_TM4C1294NCPDT -DTARGET_IS_TM4C129_RA0
 
 #
 # Include the automatically generated dependency files.

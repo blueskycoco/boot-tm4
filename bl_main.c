@@ -193,10 +193,10 @@ ConfigureDevice(void)
 #endif
 
 #ifdef CRYSTAL_FREQ
-	#ifdef PART_TM4C129XNCZAD
+	#ifdef PART_TM4C1294NCPDT
     	HWREG(SYSCTL_RSCLKCFG) = 0x0;
 	#endif
- 	#ifndef PART_TM4C129XNCZAD
+ 	#ifndef PART_TM4C1294NCPDT
     	//
     	// Since the crystal frequency was specified, enable the main oscillator
     	// and clock the processor from it.
@@ -266,14 +266,14 @@ ConfigureDevice(void)
 #endif
 
 #ifdef UART_ENABLE_UPDATE
-	#ifdef PART_TM4C129XNCZAD
+	#ifdef PART_TM4C1294NCPDT
     	//
     	// Enable the the clocks to the UART and GPIO modules.
     	//
     	HWREG(SYSCTL_RCGCGPIO) |= SYSCTL_RCGCGPIO_R0;
     	HWREG(SYSCTL_RCGCUART) |= SYSCTL_RCGCUART_R0;
 	#endif
-	#ifndef PART_TM4C129XNCZAD
+	#ifndef PART_TM4C1294NCPDT
     	//
     	// Enable the the clocks to the UART and GPIO modules.
     	//
@@ -301,7 +301,7 @@ ConfigureDevice(void)
     //
     HWREG(GPIO_PORTA_BASE + GPIO_O_DEN) |= UART_PINS;
 
-	#ifdef PART_TM4C129XNCZAD
+	#ifdef PART_TM4C1294NCPDT
     	//
     	// Set the Port Control
     	//
