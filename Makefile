@@ -105,3 +105,5 @@ CFLAGSgcc=-DTARGET_IS_TM4C123_RA3
 ifneq (${MAKECMDGOALS},clean)
 -include ${wildcard ${COMPILER}/*.d} __dummy__
 endif
+install: gcc/project.bin
+	openocd -f openocd.cfg -c "flash_image"
